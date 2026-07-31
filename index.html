@@ -1,129 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="CSS/normalize.css">
-	<link rel="stylesheet" href="CSS/styles.css">
-	<link rel="stylesheet" href="CSS/fonts.css">
-	<link rel="icon" type="image/x-icon" href="IMG/icon.png">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.slim.min.js"></script>
-	<script src="JS/script.js"></script>
-	<title>Facture</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Built by Pablo Nieto Pérez — wib.digital
+       Need changes or a new build? https://www.fiverr.com/pablonietop -->
+  <meta name="author" content="Pablo Nieto Pérez — wib.digital">
+  <link rel="author" href="https://www.fiverr.com/pablonietop">
+
+  <title>FACTURE — Laboratory, Engineering and Production Services</title>
+  <meta name="description" content="FACTURE brings together four industrial disciplines: laboratory discovery, chemical and metal engineering, rack and exhibition production, and 3D analysis.">
+  <link rel="canonical" href="https://1234.wib.digital/">
+  <meta name="theme-color" content="#dcff00">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FACTURE">
+  <meta property="og:title" content="FACTURE — Laboratory, Engineering and Production Services">
+  <meta property="og:description" content="FACTURE brings together four industrial disciplines: laboratory discovery, chemical and metal engineering, rack and exhibition production, and 3D analysis.">
+  <meta property="og:url" content="https://1234.wib.digital/">
+  <meta property="og:image" content="https://1234.wib.digital/assets/img/logo/project-icon.png">
+  <meta property="og:image:alt" content="Project mark: the digits 1, 2, 3 and 4 interlocked inside a dark circular outline.">
+
+  <link rel="icon" href="assets/img/logo/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/logo/project-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Tulpen+One&display=swap">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+
+  <script src="assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pablo Nieto Pérez",
+    "url": "https://wib.digital",
+    "jobTitle": "Web Designer and Developer",
+    "sameAs": [
+      "https://www.fiverr.com/pablonietop",
+      "https://www.linkedin.com/in/pablo-nieto-perez-39a530292"
+    ]
+  }
+  </script>
 </head>
 <body>
-	<main>
-		<a href="#">Home page</a>
-		<a href="#">About us</a>
-		<a href="#">Portafolio</a>
-		<a href="#">Download</a>
-		<a href="#">Solutions</a>
-		<a href="#">Get Started</a>
-	</main>
-	<header>
-		<div>
-			<div>
-				<div>
-					<img src="IMG/label.svg" alt="Label">
-				</div>
-				<h1>FACTURE</h1>
-			</div>
-			<div>
-				<a href="#">Home page</a>
-				<a href="#">About us</a>
-				<a href="#">Portafolio</a>
-				<a href="#">Download</a>
-			</div>
-		</div>
-		<div>
-			<a href="#">
-				<div>Solutions</div>
-			</a>
-			<a href="#">
-				<div>Get Started</div>
-				<div>
-					<img src="IMG/next-black.svg" alt="Next">
-				</div>
-			</a>
-			<div class="burger">
-				<div class="burgerClose">
-					<img src="IMG/burger.svg" alt="Burger">
-				</div>
-				<div class="burgerOpen">
-					<img src="IMG/burgerOpen.svg" alt="Burger">
-				</div>
-			</div>
-		</div>
-	</header>
-	<nav>
-		<div class="tabOne">
-			<div>
-				<h2>1</h2>
-				<button>LABORATORY</button>
-				<div>
-					<h3>Discovery Industry <br>Solutions</h3>
-					<div class="next">
-						<div class="nextWhite">
-							<img src="IMG/next-white.svg" alt="Next">
-						</div>
-						<div class="nextBlack">
-							<img src="IMG/next-black.svg" alt="Next">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="tabTwo">
-			<div>
-				<h2>2</h2>
-				<button>ENGINEERING</button>
-				<div>
-					<h3>Chemical <br> Synthetic Fibers <br>Metal</h3>
-					<div class="nextTwo">
-						<div class="nextWhiteTwo">
-							<img src="IMG/next-white.svg" alt="Next">
-						</div>
-						<div class="nextBlackTwo">
-							<img src="IMG/next-black.svg" alt="Next">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="tabThree">
-			<div>
-				<h2>3</h2>
-				<button>LAB PRODUCTION</button>
-				<div>
-					<h3>Racks <br>Exhibitions systems</h3>
-					<div class="nextThree">
-						<div class="nextWhiteThree">
-							<img src="IMG/next-white.svg" alt="Next">
-						</div>
-						<div class="nextBlackThree">
-							<img src="IMG/next-black.svg" alt="Next">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="tabFour">
-			<div>
-				<h2>4</h2>
-				<button>3D PROJECTS</button>
-				<div>
-					<h3>Analysis <br>Product Sketch</h3>
-					<div class="nextFour">
-						<div class="nextWhiteFour">
-							<img src="IMG/next-white.svg" alt="Next">
-						</div>
-						<div class="nextBlackFour">
-							<img src="IMG/next-black.svg" alt="Next">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav>
+  <a class="skip-link" href="#services">Skip to services</a>
+
+  <header class="site-header">
+    <p class="brand">
+      <svg class="brand__mark" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+        <path d="M840-480 671-241q-13 18-31 29.5T600-200H180q-25 0-42.5-17.5T120-260v-440q0-25 17.5-42.5T180-760h420q22 0 40 11.5t31 29.5l169 239Z"></path>
+      </svg>
+      <span class="brand__name">FACTURE</span>
+    </p>
+
+    <nav class="site-nav" aria-label="Services">
+      <ul>
+        <li><a class="nav-link" href="#laboratory">Laboratory</a></li>
+        <li><a class="nav-link" href="#engineering">Engineering</a></li>
+        <li><a class="nav-link" href="#production">Lab production</a></li>
+        <li><a class="nav-link" href="#projects">3D projects</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__end">
+      <a class="button site-header__cta" href="https://github.com/pabloWIB/Facture-Landing">
+        View source
+        <svg class="button__icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+          <path d="m561-242-43-42 168-168H160v-60h526L517-681l43-42 241 241-240 240Z"></path>
+        </svg>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="menu-toggle__icon menu-toggle__icon--open" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+          <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"></path>
+        </svg>
+        <svg class="menu-toggle__icon menu-toggle__icon--close" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">
+          <path d="M120-240v-60h520v60H120Zm678-52L609-481l188-188 43 43-145 145 146 146-43 43ZM120-452v-60h400v60H120Zm0-208v-60h520v60H120Z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Services, mobile">
+    <ul>
+      <li><a class="mobile-menu__link" href="#laboratory">Laboratory</a></li>
+      <li><a class="mobile-menu__link" href="#engineering">Engineering</a></li>
+      <li><a class="mobile-menu__link" href="#production">Lab production</a></li>
+      <li><a class="mobile-menu__link" href="#projects">3D projects</a></li>
+      <li><a class="mobile-menu__link" href="https://github.com/pabloWIB/Facture-Landing">View source</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1 class="visually-hidden">FACTURE — industrial laboratory, engineering and production services</h1>
+
+    <section class="services" id="services" aria-label="Services">
+      <article class="panel panel--laboratory" id="laboratory">
+        <span class="panel__media" aria-hidden="true"></span>
+        <span class="panel__number" aria-hidden="true">1</span>
+        <h2 class="panel__category">Laboratory</h2>
+        <ul class="panel__detail">
+          <li>Discovery industry solutions</li>
+        </ul>
+      </article>
+
+      <article class="panel panel--engineering" id="engineering">
+        <span class="panel__media" aria-hidden="true"></span>
+        <span class="panel__number" aria-hidden="true">2</span>
+        <h2 class="panel__category">Engineering</h2>
+        <ul class="panel__detail">
+          <li>Chemical</li>
+          <li>Synthetic fibers</li>
+          <li>Metal</li>
+        </ul>
+      </article>
+
+      <article class="panel panel--production" id="production">
+        <span class="panel__media" aria-hidden="true"></span>
+        <span class="panel__number" aria-hidden="true">3</span>
+        <h2 class="panel__category">Lab production</h2>
+        <ul class="panel__detail">
+          <li>Racks</li>
+          <li>Exhibition systems</li>
+        </ul>
+      </article>
+
+      <article class="panel panel--projects" id="projects">
+        <span class="panel__media" aria-hidden="true"></span>
+        <span class="panel__number" aria-hidden="true">4</span>
+        <h2 class="panel__category">3D projects</h2>
+        <ul class="panel__detail">
+          <li>Analysis</li>
+          <li>Product sketch</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__intro">
+      <p class="site-footer__brand">FACTURE</p>
+      <p class="text-muted">Industrial laboratory, engineering and production services, presented as a four-panel split screen.</p>
+    </div>
+
+    <div class="site-footer__meta">
+      <p class="text-muted">Design and front-end build by <a class="link-inline" href="https://wib.digital">Pablo Nieto Pérez</a></p>
+      <p class="text-muted"><a class="link-inline" href="https://github.com/pabloWIB/Facture-Landing">Source on GitHub</a></p>
+    </div>
+    <p class="site-credit">
+      Built by <a href="https://wib.digital" rel="noopener">wib.digital</a> —
+      <a href="https://www.fiverr.com/pablonietop" rel="noopener">hire me on Fiverr</a>
+    </p>
+  </footer>
 </body>
 </html>

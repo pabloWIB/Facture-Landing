@@ -1,0 +1,338 @@
+/* ==========================================================================
+   components.css — brand, navigation, buttons, panels, mobile menu, utilities
+   ========================================================================== */
+
+/* --- Brand -------------------------------------------------------------- */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-ink);
+  color: var(--color-inverse);
+  border-radius: var(--radius-sm);
+}
+
+.brand__mark {
+  width: 15px;
+  flex: none;
+}
+
+.brand__name {
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+}
+
+/* --- Navigation --------------------------------------------------------- */
+
+.site-nav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.nav-link {
+  display: inline-block;
+  padding: var(--space-2) var(--space-1);
+  font-size: var(--text-sm);
+  transition: opacity var(--transition-fast);
+}
+
+.nav-link:hover {
+  opacity: 0.6;
+}
+
+.nav-link:active {
+  opacity: 0.4;
+}
+
+/* --- Buttons ------------------------------------------------------------ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: var(--hairline) solid var(--color-ink);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.button:hover {
+  background: var(--color-ink);
+  color: var(--color-accent);
+}
+
+.button:active {
+  background: var(--color-ink-soft);
+  color: var(--color-accent);
+}
+
+.button__icon {
+  width: 15px;
+  flex: none;
+}
+
+/* Below the desktop breakpoint this link lives in the overlay instead */
+.site-header__cta {
+  display: none;
+}
+
+/* --- Menu toggle -------------------------------------------------------- */
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  transition: opacity var(--transition-fast);
+}
+
+.menu-toggle:hover {
+  opacity: 0.6;
+}
+
+.menu-toggle:active {
+  opacity: 0.4;
+}
+
+.menu-toggle__icon {
+  width: 26px;
+}
+
+.menu-toggle__icon--close {
+  display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon--open {
+  display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon--close {
+  display: block;
+}
+
+/* --- Mobile menu -------------------------------------------------------- */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  background-color: var(--color-ink);
+  background-image: linear-gradient(var(--color-scrim), var(--color-scrim)),
+    url("../img/content/menu-background.webp");
+  background-size: cover;
+  background-position: center;
+  color: var(--color-inverse);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--transition), visibility var(--transition);
+  --color-focus: var(--color-accent);
+}
+
+.mobile-menu.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mobile-menu__link {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.mobile-menu__link:hover {
+  color: var(--color-accent);
+}
+
+.mobile-menu__link:active {
+  opacity: 0.6;
+}
+
+/* When the menu is open the yellow bar gets out of the way */
+.site-header.is-menu-open {
+  background: none;
+  color: var(--color-inverse);
+  --color-focus: var(--color-accent);
+}
+
+.site-header.is-menu-open .brand {
+  visibility: hidden;
+}
+
+/* --- Panels ------------------------------------------------------------- */
+
+.panel__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+/* Scrim guarantees text contrast whatever the photograph is doing.
+   0.55 at the top keeps white above 4.5:1 even over a pure white pixel. */
+.panel__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75));
+}
+
+.panel--laboratory .panel__media {
+  background-image: url("../img/content/laboratory.webp");
+}
+
+.panel--engineering .panel__media {
+  background-image: url("../img/content/engineering.webp");
+}
+
+.panel--production .panel__media {
+  background-image: url("../img/content/lab-production.webp");
+}
+
+.panel--projects .panel__media {
+  background-image: url("../img/content/3d-projects.webp");
+}
+
+.panel:hover .panel__media,
+.panel:target .panel__media {
+  opacity: 1;
+}
+
+.panel:hover,
+.panel:target {
+  color: var(--color-inverse);
+  --color-focus: var(--color-accent);
+}
+
+.panel__number {
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 30vw, 12rem);
+  line-height: 0.78;
+  text-align: center;
+  transition: color var(--transition-slow);
+}
+
+.panel__category {
+  align-self: start;
+  padding: var(--space-1) var(--space-3);
+  border: var(--hairline) solid currentColor;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-base);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  transition: color var(--transition-slow), border-color var(--transition-slow);
+}
+
+.panel__detail {
+  max-width: var(--measure);
+  /* Reserve the tallest list (three items) so every category pill lines up */
+  min-height: calc(1.5em * 3);
+  font-size: var(--text-base);
+  transition: color var(--transition-slow);
+}
+
+/* --- Utilities ---------------------------------------------------------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 50;
+  top: var(--space-3);
+  left: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-ink);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  transform: translateY(-200%);
+  transition: transform var(--transition);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.site-footer__brand {
+  font-size: var(--text-md);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+}
+
+.text-muted {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.link-inline {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.link-inline:hover {
+  color: var(--color-accent);
+}
+
+.link-inline:active {
+  opacity: 0.6;
+}
+
+/* --- Breakpoints -------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  .panel__number {
+    font-size: clamp(9rem, 22vw, 16rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-header__cta {
+    display: inline-flex;
+  }
+
+  .brand {
+    padding: var(--space-2) var(--space-6);
+  }
+
+  .panel__number {
+    font-size: clamp(9rem, 17vw, 20rem);
+  }
+}

@@ -1,217 +1,116 @@
-![image](https://github.com/pabloDYEL/ESTATICA-34/assets/116923433/0c30431c-4c18-499e-b545-c64660ce9ddf)
-# FACTURE
+# Facture-Landing
 
-A comprehensive industrial solutions platform showcasing laboratory services, engineering capabilities, production systems, and 3D project analysis. Features modern web design with professional presentation of chemical, synthetic fiber, and metal industry solutions.
+Landing page for an industrial services company, presenting four capabilities as a numbered sequence on one screen.
 
-## Tech Stack
+[![Live demo](https://img.shields.io/badge/demo-1234.wib.digital-2ea44f)](https://1234.wib.digital)
+[![Hire me on Fiverr](https://img.shields.io/badge/Hire%20me%20on-Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/pablonietop)
+![Dependencies](https://img.shields.io/badge/npm%20dependencies-0-brightgreen)
+![Build step](https://img.shields.io/badge/build%20step-none-lightgrey)
 
-- **HTML5** - Semantic structure for professional content
-- **CSS3** - Industrial-grade styling with responsive layouts
-- **Vanilla JavaScript** - Interactive solution presentations and navigation
-- **Static Hosting** - Enterprise-ready deployment without server dependencies
+## Description
+
+Facture sells four things that are hard to explain together: laboratory work, engineering, production systems and 3D analysis. Listing them as service cards makes them look like four unrelated companies. This page numbers them 1 to 4 and runs them as a sequence, so the reader follows a process rather than picking from a menu.
+
+Each step carries a label and its scope: **1 Laboratory** for discovery and industry solutions, **2 Engineering** for chemical, synthetic fibre and metal, **3 Lab Production** for racks and exhibition systems, **4 3D Projects** for analysis and product sketching. The numbering doubles as the navigation.
+
+The page is static HTML and CSS with one small script for the mobile menu. There is no preprocessor, no package manager and no build step — the CSS in `assets/css/` is the source, edited directly.
 
 ## Features
 
-- Professional industrial solutions showcase
-- Multi-service platform presentation
-- Laboratory and discovery industry sections
-- Engineering and chemical synthetic fiber solutions
-- Production rack and exhibition system displays
-- 3D project analysis and product sketching tools
-- Downloadable resources and documentation
-- Responsive design for desktop and mobile access
-- Professional navigation and user experience
-- Clean industrial aesthetic with modern typography
+- Four capabilities presented as a numbered sequence rather than a service grid.
+- Header and mobile-menu links jump to the matching panel, which reveals its photograph via `:target` — so the navigation does the same thing with a click, a tap or a keyboard.
+- Hovering a panel reveals the same photograph, under a gradient scrim that keeps white text above 4.5:1 whatever the image is doing.
+- Mobile menu with scroll lock, `Escape` to close, close-on-link-click and focus returned to the toggle.
+- Photography served as WebP: 244 KB for all five images, against 1.09 MB as JPEG.
+- All icons are inline SVG using `currentColor`, so a single markup path covers both the light and dark states.
 
-## Project Structure
+## Tech stack
+
+| Layer | Technology | Version | Role in project |
+|---|---|---|---|
+| Markup | HTML5 | — | `index.html` and `404.html` |
+| Styling | CSS3 | — | Three layers: `base.css`, `layout.css`, `components.css` |
+| Design tokens | CSS custom properties | — | Colour, spacing, type and motion scales in `:root` |
+| Scripting | JavaScript (vanilla) | ES2020 | 66 lines in `assets/js/main.js`, mobile menu only |
+| Fonts | Inter, Tulpen One | — | Google Fonts, `preconnect` + `display=swap` |
+| Images | WebP | — | Five photographs in `assets/img/content/` |
+
+No runtime dependencies and no third-party JavaScript.
+
+## Prerequisites
+
+None. Open `index.html` in a browser, or serve the folder.
+
+## Installation
+
+```bash
+git clone https://github.com/pabloWIB/Facture-Landing.git
+cd Facture-Landing
+npx serve .
+```
+
+Or open `index.html` directly. Both work: the script is a classic deferred script rather than an ES module, so there are no module imports to trip the `file://` origin rules, and there are no fetch calls.
+
+## Usage
+
+Edit the CSS in `assets/css/` directly — the three files load in order and are meant to be read in that order:
+
+| File | Holds |
+|---|---|
+| `base.css` | Custom properties, reset, base typography |
+| `layout.css` | Header, services grid, error page, footer |
+| `components.css` | Brand, navigation, buttons, panels, mobile menu, utilities |
+
+Design values live as custom properties in `base.css`. Changing the accent colour everywhere is one edit:
+
+```css
+:root {
+  --color-accent: #dcff00;
+}
+```
+
+Breakpoints are mobile-first `min-width` at 480, 768, 1024 and 1440 px. Panels stack in one column, go to two at 768 and to four at 1024.
+
+## Project structure
 
 ```
-facture/
-├── index.html              # Homepage and main navigation
-├── about.html              # Company information
-├── portfolio.html          # Project showcase
-├── download.html           # Resources and documentation
-├── solutions/
-│   ├── laboratory.html     # Discovery industry solutions
-│   ├── engineering.html    # Chemical and synthetic solutions
-│   ├── production.html     # Lab production systems
-│   └── 3d-projects.html    # Analysis and sketching tools
-├── css/
-│   ├── main.css           # Primary stylesheet
-│   ├── industrial.css     # Industry-specific styling
-│   ├── components.css     # Reusable UI components
-│   └── responsive.css     # Mobile optimization
-├── js/
-│   ├── app.js            # Core application logic
-│   ├── solutions.js      # Solution presentation handlers
-│   ├── portfolio.js      # Project gallery functionality
-│   └── downloads.js      # Resource management
+.
+├── index.html                    # The whole page
+├── 404.html                      # Not-found page, links back to home
+├── robots.txt                    # Allows everything except 404.html
+├── sitemap.xml                   # One URL: the home page
 ├── assets/
-│   ├── images/
-│   │   ├── laboratory/   # Lab equipment and processes
-│   │   ├── engineering/  # Chemical and fiber imagery
-│   │   ├── production/   # Manufacturing systems
-│   │   └── 3d-projects/  # Project analysis visuals
-│   ├── documents/
-│   │   ├── specs/        # Technical specifications
-│   │   ├── catalogs/     # Product catalogs
-│   │   └── case-studies/ # Industry case studies
-│   └── downloads/
-│       ├── brochures/    # Marketing materials
-│       ├── manuals/      # Technical documentation
-│       └── software/     # Analysis tools
-└── README.md
+│   ├── css/
+│   │   ├── base.css              # Tokens, reset, base type
+│   │   ├── layout.css            # Header, grid, error page, footer
+│   │   └── components.css        # Brand, nav, buttons, panels, menu
+│   ├── js/
+│   │   └── main.js               # Mobile menu: toggle, scroll lock, Escape
+│   └── img/
+│       ├── content/              # One WebP per panel, plus the menu backdrop
+│       └── logo/                 # favicon.png and project-icon.png
+└── docs/
+    ├── auditoria.md              # Pre-reorganisation audit
+    └── cambios.md                # Change log, grouped by phase
 ```
-
-## Quick Start
-
-### Prerequisites
-- Modern web browser
-- Local development server (recommended for file access)
-- PDF viewer for downloadable documentation
-
-### Local Development
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/pabloWIB/1234.git
-   cd 1234
-   ```
-
-2. **Launch development server**
-   ```bash
-   # Using Node.js
-   npx http-server -p 8080
-   
-   # Using Python
-   python -m http.server 8080
-   
-   # Direct browser access (limited file functionality)
-   open index.html
-   ```
-
-3. **Access the platform**
-   Navigate to `http://localhost:8080` to explore all solutions and features
-
-### Content Structure
-- **Solutions Overview**: Main service categories and capabilities
-- **Laboratory Services**: Discovery and analysis capabilities
-- **Engineering Solutions**: Chemical and synthetic fiber expertise
-- **Production Systems**: Manufacturing and exhibition solutions
-- **3D Projects**: Analysis tools and product development
 
 ## Deployment
 
-### Enterprise Hosting Options
+Deployed on Vercel at [1234.wib.digital](https://1234.wib.digital). Static: upload the repository root as-is, no build command and no output directory. Vercel serves `404.html` for unmatched routes automatically, so no rewrite configuration is needed.
 
-**AWS S3 + CloudFront** (Recommended for B2B)
-1. Upload files to S3 bucket
-2. Configure CloudFront distribution
-3. Set up custom domain with SSL
-4. Enable access logging for analytics
+`robots.txt`, `sitemap.xml` and the canonical and Open Graph URLs all point at `https://1234.wib.digital/`. Change them together if the domain changes.
 
-**Netlify Business**
-1. Connect GitHub repository
-2. Configure custom headers for downloads
-3. Set up form handling for inquiries
-4. Enable branch deploys for testing
+## Author
 
-**Azure Static Web Apps**
-1. Deploy from GitHub integration
-2. Configure custom domains
-3. Set up staging environments
-4. Enable authentication if needed
+**Pablo Nieto Pérez** — [wib.digital](https://wib.digital)
+GitHub: [@pabloWIB](https://github.com/pabloWIB)
 
-**Google Cloud Storage**
-1. Create bucket with public access
-2. Upload static files
-3. Configure load balancer
-4. Set up CDN for global access
+## Hire me
 
-### Security Considerations
-- Implement HTTPS for all deployments
-- Secure download links with time-based access
-- Add basic authentication for sensitive documents
-- Monitor access logs for security analysis
+I build **custom internal tools, CRMs and dashboards** for small teams, and
+**conversion-focused websites** for businesses.
 
-## Customization
-
-### Solution Content Updates
-- **Laboratory Services**: Update equipment specs and capabilities
-- **Engineering Solutions**: Modify chemical and fiber expertise areas
-- **Production Systems**: Add new manufacturing capabilities
-- **3D Projects**: Include latest analysis tools and software
-- **Case Studies**: Add industry-specific success stories
-
-### Professional Styling
-- **Corporate Colors**: Update brand colors in CSS custom properties
-- **Typography**: Implement professional fonts and hierarchy
-- **Layout**: Adjust grid systems for content organization
-- **Navigation**: Customize menu structure for easy access
-- **Forms**: Style contact and inquiry forms professionally
-
-### Download Management
-- **Resource Organization**: Structure documents by category and type
-- **Access Control**: Implement download tracking and permissions
-- **File Optimization**: Compress PDFs and images for faster loading
-- **Version Control**: Maintain document versioning system
-- **Analytics**: Track download frequency and popular resources
-
-### Technical Integration
-- **CRM Integration**: Connect inquiry forms to customer management
-- **Analytics**: Implement conversion tracking for business goals
-- **SEO Optimization**: Optimize for industry-specific keywords
-- **Lead Generation**: Add call-to-action elements throughout
-- **Mobile Optimization**: Ensure full functionality on mobile devices
-
-## Browser Support
-
-- Chrome 70+ (PDF handling and modern CSS)
-- Firefox 65+ (Download management)
-- Safari 13+ (Mobile and desktop compatibility)
-- Edge 80+ (Enterprise environment support)
-- Internet Explorer 11 (Legacy enterprise support with polyfills)
-
-**Enterprise Features:**
-- PDF inline viewing and download
-- Form validation and submission
-- Responsive tables for technical specifications
-- Print-friendly layouts for documentation
-
-## Contributing
-
-### For Technical Writers
-1. Fork the repository
-2. Add content to appropriate solution sections
-3. Follow technical documentation standards
-4. Include relevant imagery and diagrams
-5. Submit pull request with content review
-
-### For Industry Experts
-1. Create feature branch for new solutions
-2. Add case studies and technical specifications
-3. Include professional photography and diagrams
-4. Update navigation and cross-references
-5. Test across enterprise browsers
-
-### Content Guidelines
-- Maintain professional tone for B2B audience
-- Use industry-standard terminology consistently
-- Include technical specifications and certifications
-- Provide clear contact information and next steps
-- Ensure all downloadable content is current and accurate
-
-### Quality Standards
-- Professional photography with consistent lighting
-- Technical diagrams with clear labeling
-- Error-free technical documentation
-- Mobile-responsive layouts for all content
-- Fast loading times for large technical files
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-**FACTURE** - Professional industrial solutions platform providing comprehensive laboratory, engineering, production, and 3D analysis services for modern manufacturing and chemical industries.
+- [Custom internal tool, CRM or dashboard](https://www.fiverr.com/pablonietop/build-a-custom-internal-app-for-your-business) — from $45
+- [Conversion-focused website](https://www.fiverr.com/pablonietop/convert-your-landing-page-design-to-code) — from $80
+- [All my services on Fiverr](https://www.fiverr.com/pablonietop)
+- [wib.digital](https://wib.digital)

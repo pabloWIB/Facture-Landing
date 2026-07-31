@@ -1,0 +1,171 @@
+/* ==========================================================================
+   layout.css — page frame: header, services grid, footer
+   ========================================================================== */
+
+/* --- Site header -------------------------------------------------------- */
+
+.site-header {
+  position: fixed;
+  /* Above .mobile-menu so the toggle stays reachable while the overlay is up */
+  z-index: 40;
+  top: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(95%, 1600px);
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-1);
+  background: var(--color-accent);
+  border-radius: var(--radius-md);
+  /* Black reads best against the yellow bar */
+  --color-focus: var(--color-ink);
+}
+
+.site-header__end {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-right: var(--space-2);
+}
+
+/* Desktop navigation is hidden until there is room for it */
+.site-nav {
+  display: none;
+}
+
+/* --- Services grid ------------------------------------------------------ */
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* The 1px gap over a black ground draws the dividers between panels */
+  gap: var(--hairline);
+  background: var(--color-ink);
+}
+
+.panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-6);
+  min-height: 60svh;
+  padding: calc(var(--header-height) + var(--space-7)) var(--space-5) var(--space-6);
+  background: var(--color-bg);
+  scroll-margin-top: calc(var(--header-height) + var(--space-4));
+}
+
+/* --- Error page --------------------------------------------------------- */
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  min-height: 100svh;
+  padding: calc(var(--header-height) + var(--space-8)) var(--space-5) var(--space-8);
+}
+
+.error-page__code {
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 28vw, 20rem);
+  line-height: 0.78;
+}
+
+.error-page__title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.error-page__text {
+  max-width: var(--measure);
+  color: var(--color-ink-soft);
+}
+
+/* --- Footer ------------------------------------------------------------- */
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-7) var(--space-5);
+  background: var(--color-ink);
+  color: var(--color-inverse);
+  --color-focus: var(--color-accent);
+}
+
+.site-footer__intro {
+  max-width: var(--measure);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.site-footer__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  padding-top: var(--space-4);
+  border-top: var(--hairline) solid rgba(255, 255, 255, 0.24);
+}
+
+/* --- Breakpoints -------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  .panel,
+  .error-page {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (min-width: 768px) {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .panel {
+    min-height: 70svh;
+  }
+
+  .site-footer {
+    padding-inline: var(--space-7);
+  }
+
+  .site-footer__meta {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 56px;
+  }
+
+  .site-nav {
+    display: block;
+  }
+
+  .services {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .panel {
+    min-height: 100svh;
+    padding: calc(var(--header-height) + var(--space-6)) var(--space-4) var(--space-6);
+  }
+}
+
+@media (min-width: 1440px) {
+  .panel {
+    padding-inline: var(--space-5);
+  }
+
+  .site-footer {
+    padding-inline: var(--space-8);
+  }
+}
