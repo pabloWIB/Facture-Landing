@@ -2,7 +2,7 @@
 
 Landing page for an industrial services company, presenting four capabilities as a numbered sequence on one screen.
 
-[![Live demo](https://img.shields.io/badge/demo-1234.wib.digital-2ea44f)](https://1234.wib.digital)
+[![Live demo](https://img.shields.io/badge/demo-pablowib.github.io/Facture-Landing-2ea44f)](https://pablowib.github.io/Facture-Landing)
 [![Hire me on Fiverr](https://img.shields.io/badge/Hire%20me%20on-Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/pablonietop)
 ![Dependencies](https://img.shields.io/badge/npm%20dependencies-0-brightgreen)
 ![Build step](https://img.shields.io/badge/build%20step-none-lightgrey)
@@ -96,9 +96,9 @@ Breakpoints are mobile-first `min-width` at 480, 768, 1024 and 1440 px. Panels s
 
 ## Deployment
 
-Deployed on Vercel at [1234.wib.digital](https://1234.wib.digital). Static: upload the repository root as-is, no build command and no output directory. Vercel serves `404.html` for unmatched routes automatically, so no rewrite configuration is needed.
+Deployed on GitHub Pages at [pablowib.github.io/Facture-Landing](https://pablowib.github.io/Facture-Landing). Static: upload the repository root as-is, no build command and no output directory. GitHub Pages serves `404.html` for unmatched routes automatically, so no rewrite configuration is needed.
 
-`robots.txt`, `sitemap.xml` and the canonical and Open Graph URLs all point at `https://1234.wib.digital/`. Change them together if the domain changes.
+`robots.txt`, `sitemap.xml` and the canonical and Open Graph URLs all point at `https://pablowib.github.io/Facture-Landing/`. Change them together if the domain changes.
 
 ## Author
 

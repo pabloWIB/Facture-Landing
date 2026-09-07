@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://1234.wib.digital/sitemap.xml
+Sitemap: https://pablowib.github.io/Facture-Landing/sitemap.xml
